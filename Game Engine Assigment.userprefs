@@ -1,10 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Boid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CameraControl.cs">
     <Files>
-      <File FileName="Game Engine Assigment.sln" Line="1" Column="1" />
-      <File FileName="Assets\Boid.cs" Line="47" Column="8" />
-      <File FileName="Assets\Path.cs" Line="1" Column="1" />
+      <File FileName="Assets\Gun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Formation.cs" Line="138" Column="4" />
+      <File FileName="Assets\Boid.cs" Line="189" Column="2" />
+      <File FileName="Assets\Code\SteeringBehaviours.cs" Line="600" Column="21" />
+      <File FileName="Assets\Code\LineDrawer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Path.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Space.cs" Line="1" Column="1" />
+      <File FileName="Assets\lifeSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\attack.cs" Line="22" Column="39" />
+      <File FileName="Assets\LaserBeam.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Lazer.cs" Line="1" Column="1" />
+      <File FileName="Assets\teleport.cs" Line="1" Column="1" />
+      <File FileName="Assets\Intro.cs" Line="29" Column="18" />
+      <File FileName="Assets\CameraControl.cs" Line="28" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

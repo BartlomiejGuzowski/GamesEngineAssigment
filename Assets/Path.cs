@@ -36,7 +36,7 @@ public class Path
 	
         }
 
-  public	void Advance(){
+  public Vector3 Advance(){
 		if (looped) {
 						next = (next + 1) % waypoints.Count;
 				}
@@ -46,6 +46,7 @@ public class Path
 				next++;
 			}
 		}
+		return NextWaypint ();
 	}
 	public bool islast(){
 		return ((! looped) && (next == waypoints.Count - 1));

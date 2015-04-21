@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,15 +39,60 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Boid.cs" />
+     <Compile Include="Assets\CameraControl.cs" />
+     <Compile Include="Assets\Code\Cell.cs" />
+     <Compile Include="Assets\Code\FPSController.cs" />
+     <Compile Include="Assets\Code\Geom\Ray.cs" />
+     <Compile Include="Assets\Code\Geom\Sphere.cs" />
+     <Compile Include="Assets\Code\Lazer.cs" />
+     <Compile Include="Assets\Code\LineDrawer.cs" />
+     <Compile Include="Assets\Code\MoveSTuff.cs" />
+     <Compile Include="Assets\Code\Node.cs" />
+     <Compile Include="Assets\Code\Params.cs" />
+     <Compile Include="Assets\Code\Path.cs" />
+     <Compile Include="Assets\Code\PathFinder.cs" />
+     <Compile Include="Assets\Code\Perception.cs" />
+     <Compile Include="Assets\Code\PriorityQueue.cs" />
+     <Compile Include="Assets\Code\Pusher.cs" />
+     <Compile Include="Assets\Code\Rotate.cs" />
+     <Compile Include="Assets\Code\Scenarios\ArriveScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\FlockingScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\ObstacleAvoidanceScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\PathFindingScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\PathFollowingScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\PursueScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\Scenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\SeekScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\StateMachineScenario.cs" />
+     <Compile Include="Assets\Code\Scenarios\WanderScenario.cs" />
+     <Compile Include="Assets\Code\Space.cs" />
+     <Compile Include="Assets\Code\States\AttackingState.cs" />
+     <Compile Include="Assets\Code\States\EvadeState.cs" />
+     <Compile Include="Assets\Code\States\IdleState.cs" />
+     <Compile Include="Assets\Code\States\State.cs" />
+     <Compile Include="Assets\Code\States\StateMachine.cs" />
+     <Compile Include="Assets\Code\States\TeaseState.cs" />
+     <Compile Include="Assets\Code\SteeringBehaviours.cs" />
+     <Compile Include="Assets\Code\SteeringManager.cs" />
+     <Compile Include="Assets\Code\Utilities.cs" />
+     <Compile Include="Assets\Code\VectorDrawer.cs" />
+     <Compile Include="Assets\Federationfigher.cs" />
+     <Compile Include="Assets\Formation.cs" />
+     <Compile Include="Assets\Gun.cs" />
+     <Compile Include="Assets\Intro.cs" />
+     <Compile Include="Assets\LaserBeam.cs" />
      <Compile Include="Assets\Path.cs" />
+     <Compile Include="Assets\attack.cs" />
+     <Compile Include="Assets\lifeSystem.cs" />
+     <Compile Include="Assets\teleport.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
@@ -71,6 +116,9 @@
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/bartlomiej/Documents/Game Engine Assigment/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
