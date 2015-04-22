@@ -92,6 +92,7 @@
      <Compile Include="Assets\Path.cs" />
      <Compile Include="Assets\attack.cs" />
      <Compile Include="Assets\lifeSystem.cs" />
+     <Compile Include="Assets\portal.cs" />
      <Compile Include="Assets\teleport.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />

@@ -6,6 +6,8 @@ public class attack: MonoBehaviour {
 	//public GameObject Enemy;
 	public Vector3 ToTarget = new Vector3();
 	public GameObject target;
+	GameObject[] hold;
+	GameObject[] hold1;
 	float maxSpeed;
 	float dist;
 	public Vector3 velocity;
@@ -16,14 +18,17 @@ public class attack: MonoBehaviour {
 	public static  bool isAttacking;
 	//public  bool isAttacking;
 
-	public float range; 
+	public float range = 10; 
 	// Use this for initialization
 	void Start () {
+		range = 200f;
+		hold = GameObject.FindGameObjectsWithTag ("Kingdom");
+		hold1 = GameObject.FindGameObjectsWithTag ("Federation");
 		if (transform.tag == "Federation") {
-			Enemy = GameObject.FindGameObjectWithTag ("Kingdom");
+			Enemy = hold[Random.Range (0,hold.Length)];
 		}
 		if (transform.tag == "Kingdom") {
-			Enemy = GameObject.FindGameObjectWithTag ("Federation");
+			Enemy = hold1[Random.Range(0,hold1.Length)];
 		}
 	//	Enemy = target;
 	//	Debug.Log (Enemy);
@@ -33,55 +38,43 @@ public class attack: MonoBehaviour {
 			ToTarget = transform.position - Enemy.transform.position;
 			dist = ToTarget.magnitude;
 		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (dist <= range && Enemy != null) {
+		if (dist <= range && dist >= 10 && Enemy != null) {
+			//	force+= pursue(Enemy); 
 			isAttacking = true;
-			force += pursue(Enemy);
-			acceleration =  force / mass;
-		//	velocity += acceleration * Time.deltaTime;
-			Vector3.ClampMagnitude(velocity, maxSpeed);
+			force += pursue (Enemy);
+			acceleration = force / mass;
+			velocity += acceleration * Time.deltaTime;
+			Vector3.ClampMagnitude (velocity, maxSpeed);
+
 			
-			
-			
-			transform.position += velocity * Time.deltaTime;
-			
-			if (velocity.magnitude > float.Epsilon)
-			{
+			if (float.IsNaN (transform.position.x)) {
+				transform.position += velocity * Time.deltaTime;
+			}
+			if (velocity.magnitude > float.Epsilon) {
 				transform.forward = velocity.normalized;
 				velocity *= 0.99f;
 			}
 			
 			force = Vector3.zero;
-			//transform.gameObject.GetComponents<Boid>()
-	//		Debug.Log("_________________________________________________");
-		//	transform.GetComponent<Boid>().pursue(Enemy);
-		//	Debug.Log("_________________________________________________");
-			///	boid.pursue(Enemy);
-			/*Ray ray = new Ray(transform.position, transform.forward);
-			RaycastHit hit;
-			
-			
-			
-			if(Physics.Raycast(ray, out hit, 100))
-			{
-				
-				if(hit.rigidbody)
-				{
-					Debug.Break();
-					hit.rigidbody.AddForceAtPosition(transform.forward  
-					                                 * 10, hit.point);
-				}
-			}*/
+	
 			Debug.DrawLine (transform.position, Enemy.transform.position, Color.red, 0.10f);
-			lifeSystem.hit= true;
+			lifeSystem.hit = true;
 
-			lifeSystem.hit=false;
-	//		ToTarget = transform.position - Enemy.transform.position;
-		//	dist = ToTarget.magnitude;
+			lifeSystem.hit = false;
+			//		ToTarget = transform.position - Enemy.transform.position;
+			//	dist = ToTarget.magnitude;
+		} else 
+		{
+			isAttacking = false;
 		}
+	//	if (dist >= 10) {
+	//	}
+
 		ToTarget = transform.position - Enemy.transform.position;
 		dist = ToTarget.magnitude;
 	//	ToTarget = transform.position - Enemy.transform.position;
@@ -108,5 +101,19 @@ public class attack: MonoBehaviour {
 		//	LineDrawer.DrawTarget(seekTarget, Color.blue);
 		return desired - velocity;
 	}
+	Vector3 Flee(Vector3 targetPos)
+	{
+		float panicDistance = 100.0f;
+		Vector3 desiredVelocity;
+		desiredVelocity = transform.position - targetPos;
+		if (desiredVelocity.magnitude > panicDistance)
+		{
+			//return Vector3.zero;
+		}
+		desiredVelocity.Normalize();
+		desiredVelocity *= maxSpeed;
+		return (desiredVelocity - velocity);
+	}
+
 
 }

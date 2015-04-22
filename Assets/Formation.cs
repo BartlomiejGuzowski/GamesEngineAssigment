@@ -74,6 +74,7 @@ public class Formation : MonoBehaviour {
 				path.waypoints.Add (PathFolowObject.transform.GetChild (i).position);
 			
 			}
+			path.looped = Looped;
 		}
 
 	for (int i=0; i<OFFSET.Count; i++) {
@@ -96,9 +97,10 @@ public class Formation : MonoBehaviour {
 		//Debug.Log (delay);
 		if (delay >= timer) {
 			if (Ships != null) {
+				if(attack.isAttacking!= true){
 
 				FormationUpdate ();
-			
+				}
 			}
 			LeaderUpdate ();
 		}

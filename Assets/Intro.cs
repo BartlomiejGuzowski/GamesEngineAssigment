@@ -17,12 +17,13 @@ public class Intro : MonoBehaviour {
 	void OnGUI() {
 		GUI.DrawTexture(new Rect (0, 0, 800, 800), FirePlace);
 		GUI.DrawTexture (new Rect (Screen.width/2, Screen.height/2, 500, 500), Book);
-		GUI.TextArea(new Rect ((Screen.width/2)+19, (Screen.height/2)+15, 200, 200), "It  was year 8421 of kindom Calendar " +
+		GUI.TextArea(new Rect ((Screen.width/2)+19, (Screen.height/2)+15, 200, 200), "It  was year 8421 of kingdom Calendar " +
 			
-		    "When revolution had started, Rebel planets had  create federation and chalange old kindom " +
+		    "When revolution had started, Rebel planets had created federation and chalange old kindom " +
 			"and living god who controlded it" +
 			"Long and bloody war was started, it had consume many lifes, This " +
-			"is story of the finnaly battle, Foreces of two fraction had crush into each other " +
+			"is story of the finnaly battle, Foreces of two fraction had crush into each other over capital of Kingdom" +
+			"federation in hope of suprise and fast victory had collect army and attack" +
 			"Now lets see the events of that day ");
 		float timer = Time.realtimeSinceStartup;
 	//	Debug.Log (timer);
